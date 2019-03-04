@@ -3,7 +3,10 @@ org 0000h
 org 1000h
 start:
 	mov r0, #30h
-	mov r2, #35h
+	mov r2, #37h
+	mov a, r2
+	subb a, r0
+	mov r4, a 
 next:
 	mov a, r0
 	mov r1, a
@@ -17,10 +20,12 @@ next:
 	mov @r0, a
 cont:		
 	mov a, r2
-	xrl a, r0
+	xrl a, r0	
 	jnz next
+	djnz r4, back
+thend:
+	ljmp thend
+back:	
 	mov r0, #30h
 	ljmp next
-	
-	 	
 	
