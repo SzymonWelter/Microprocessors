@@ -1,4 +1,4 @@
-include REG515.INC
+include 	REG515.INC
 						
 org 1000h		
 	ljmp conf
