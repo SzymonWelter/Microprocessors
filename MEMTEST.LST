@@ -1,0 +1,185 @@
+MACRO ASSEMBLER MEMTEST                                     06/01/19 16:33:38 PAGE     1
+
+
+WIN32 MACRO ASSEMBLER MA51 V06.04.09OBJECT MODULE PLACED IN E:\USER\DOCUMENTS\MIKROPROCKI\MICROPROCESSORS\MEMTEST.OBJ
+ASSEMBLER INVOKED BY: MA51.EXE E:\USER\DOCUMENTS\MIKROPROCKI\MICROPROCESSORS\MEMTEST.A51 OJ("E:\USER\DOCUMENTS\MIKROPROCKI\MICROPROCESSORS\MEMTEST.OBJ") PIN("E:\APP\RIDE\INC") EP LINES SYNTAX(ASM51) PR("E:\USER\DOCUMENTS\MIKROPROCKI\MICROPROCESSORS\MEMTEST.LST") XR DB PW(80) RB(0) 
+
+LOC     OBJ           LINE    SOURCE
+                         1     INCLUDE 	REG515.INC
+                       132     
+                       133     CODE AT 0000H
+0000    021000         134     	LJMP 1000H
+                       135     	
+                       136     CODE AT 1000H
+1000    7400           137     	MOV A, #00H
+                       138     LOOP: 
+1002    903000         139     	MOV DPTR, #3000H
+1005    121017         140     	LCALL WRITE	
+1008    903000         141     	MOV DPTR, #3000H
+100B    F5F0           142     	MOV B, A
+100D    12101F         143     	LCALL READ
+1010    04             144     	INC A	
+1011    B400EE         145     	CJNE A, #00H, LOOP	
+                       146     MAIN: 
+1014    021014         147     	LJMP MAIN 
+                       148     WRITE: 
+1017    F0             149     	MOVX @DPTR, A
+1018    A3             150     	INC DPTR
+1019    A883           151     	MOV R0, DPH	
+101B    B800F9         152     	CJNE R0, #00H, WRITE
+101E    22             153     	RET
+                       154     READ: 
+101F    E0             155     	MOVX A, @DPTR
+1020    B5F009         156     	CJNE A, B, ERR
+1023    A3             157     	INC DPTR
+1024    A883           158     	MOV R0, DPH	
+1026    B800F6         159     	CJNE R0, #00H, READ
+1029    E5F0           160     	MOV A, B
+102B    22             161     	RET
+                       162     ERR: 
+102C    8583E8         163     	MOV P4, DPH
+102F    F5F8           164     	MOV P5, A
+1031    02102C         165     	LJMP ERR
+
+*** WARNING #87 IN LINE 35 OF memtest.a51 : MISSING 'END' STATEMENT
+MACRO ASSEMBLER MEMTEST                                     06/01/19 16:33:38 PAGE     0
+
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES             REFERENCES
+
+T2I1 . . . . . . .  B ADDR   00C8H.1 A                          113# 
+CRCH . . . . . . .  D ADDR   00CBH   A                          44# 
+CCH2 . . . . . . .  D ADDR   00C5H   A                          39# 
+DPL. . . . . . . .  D ADDR   0082H   A                          18# 
+P0 . . . . . . . .  D ADDR   0080H   A                          8# 
+CCH3 . . . . . . .  D ADDR   00C7H   A                          41# 
+P1 . . . . . . . .  D ADDR   0090H   A                          9# 
+SWDT . . . . . . .  B ADDR   00B8H.6 A                          81# 
+EXEN2. . . . . . .  B ADDR   00B8H.7 A                          80# 
+B. . . . . . . . .  D ADDR   00F0H   A                          16# 142 156 160 
+P2 . . . . . . . .  D ADDR   00A0H   A                          10# 
+CCL1 . . . . . . .  D ADDR   00C2H   A                          36# 
+SP . . . . . . . .  D ADDR   0081H   A                          17# 
+P3 . . . . . . . .  D ADDR   00B0H   A                          11# 
+T0 . . . . . . . .  B ADDR   00B0H.4 A                          92# 
+AC . . . . . . . .  B ADDR   00D0H.6 A                          54# 
+CRCL . . . . . . .  D ADDR   00CAH   A                          43# 
+CCL2 . . . . . . .  D ADDR   00C4H   A                          38# 
+P4 . . . . . . . .  D ADDR   00E8H   A                          12# 163 
+MAIN . . . . . . .  C ADDR   1014H   A                          146# 147 
+REN. . . . . . . .  B ADDR   0098H.4 A                          101# 
+T1 . . . . . . . .  B ADDR   00B0H.5 A                          91# 
+OV . . . . . . . .  B ADDR   00D0H.2 A                          58# 
+ADCON. . . . . . .  D ADDR   00D8H   A                          47# 
+CCL3 . . . . . . .  D ADDR   00C6H   A                          40# 
+P5 . . . . . . . .  D ADDR   00F8H   A                          13# 164 
+BD . . . . . . . .  B ADDR   00D8H.7 A                          116# 
+T2CON. . . . . . .  D ADDR   00C8H   A                          42# 
+DAPR . . . . . . .  D ADDR   00DAH   A                          49# 
+ACC. . . . . . . .  D ADDR   00E0H   A                          15# 
+T2R0 . . . . . . .  B ADDR   00C8H.3 A                          111# 
+ERR. . . . . . . .  C ADDR   102CH   A                          156 162# 165 
+T2R1 . . . . . . .  B ADDR   00C8H.4 A                          110# 
+T2PS . . . . . . .  B ADDR   00C8H.7 A                          107# 
+WR . . . . . . . .  B ADDR   00B0H.6 A                          90# 
+ET0. . . . . . . .  B ADDR   00A8H.1 A                          77# 
+IP0. . . . . . . .  D ADDR   00A9H   A                          32# 
+ET1. . . . . . . .  B ADDR   00A8H.3 A                          75# 
+TF0. . . . . . . .  B ADDR   0088H.5 A                          64# 
+IP1. . . . . . . .  D ADDR   00B9H   A                          33# 
+WRITE. . . . . . .  C ADDR   1017H   A                          140 148# 152 
+ET2. . . . . . . .  B ADDR   00A8H.5 A                          73# 
+TF1. . . . . . . .  B ADDR   0088H.7 A                          62# 
+TF2. . . . . . . .  B ADDR   00C0H.6 A                          125# 
+RB8. . . . . . . .  B ADDR   0098H.2 A                          103# 
+IEN0 . . . . . . .  D ADDR   00A8H   A                          30# 
+TH0. . . . . . . .  D ADDR   008CH   A                          25# 
+EADC . . . . . . .  B ADDR   00B8H.0 A                          87# 
+EX0. . . . . . . .  B ADDR   00A8H.0 A                          78# 
+IT0. . . . . . . .  B ADDR   0088H.0 A                          69# 
+IEN1 . . . . . . .  D ADDR   00B8H   A                          31# 
+TH1. . . . . . . .  D ADDR   008DH   A                          26# 
+BSY. . . . . . . .  B ADDR   00D8H.4 A                          118# 
+TB8. . . . . . . .  B ADDR   0098H.3 A                          102# 
+RXD. . . . . . . .  B ADDR   00B0H.0 A                          96# 
+EX1. . . . . . . .  B ADDR   00A8H.2 A                          76# 
+IT1. . . . . . . .  B ADDR   0088H.2 A                          67# 
+TH2. . . . . . . .  D ADDR   00CDH   A                          46# 
+EX2. . . . . . . .  B ADDR   00B8H.1 A                          86# 
+WDT. . . . . . . .  B ADDR   00A8H.6 A                          72# 
+SM0. . . . . . . .  B ADDR   0098H.7 A                          98# 
+TXD. . . . . . . .  B ADDR   00B0H.1 A                          95# 
+EX3. . . . . . . .  B ADDR   00B8H.2 A                          85# 
+P. . . . . . . . .  B ADDR   00D0H.0 A                          60# 
+SBUF . . . . . . .  D ADDR   0099H   A                          28# 
+TL0. . . . . . . .  D ADDR   008AH   A                          23# 
+PCON . . . . . . .  D ADDR   0087H   A                          20# 
+IADC . . . . . . .  B ADDR   00C0H.0 A                          131# 
+SM1. . . . . . . .  B ADDR   0098H.6 A                          99# 
+EX4. . . . . . . .  B ADDR   00B8H.3 A                          84# 
+TL1. . . . . . . .  D ADDR   008BH   A                          24# 
+ADM. . . . . . . .  B ADDR   00D8H.3 A                          119# 
+SM2. . . . . . . .  B ADDR   0098H.5 A                          100# 
+EX5. . . . . . . .  B ADDR   00B8H.4 A                          83# 
+EAL. . . . . . . .  B ADDR   00A8H.7 A                          71# 
+TL2. . . . . . . .  D ADDR   00CCH   A                          45# 
+I2FR . . . . . . .  B ADDR   00C8H.5 A                          109# 
+EX6. . . . . . . .  B ADDR   00B8H.5 A                          82# 
+SCON . . . . . . .  D ADDR   0098H   A                          27# 
+I3FR . . . . . . .  B ADDR   00C8H.6 A                          108# 
+TMOD . . . . . . .  D ADDR   0089H   A                          22# 
+TCON . . . . . . .  D ADDR   0088H   A                          21# 
+EXF2 . . . . . . .  B ADDR   00C0H.7 A                          124# 
+MX0. . . . . . . .  B ADDR   00D8H.0 A                          122# 
+RS0. . . . . . . .  B ADDR   00D0H.3 A                          57# 
+MX1. . . . . . . .  B ADDR   00D8H.1 A                          121# 
+T2CM . . . . . . .  B ADDR   00C8H.2 A                          112# 
+RD . . . . . . . .  B ADDR   00B0H.7 A                          89# 
+TR0. . . . . . . .  B ADDR   0088H.4 A                          65# 
+RS1. . . . . . . .  B ADDR   00D0H.4 A                          56# 
+F0 . . . . . . . .  B ADDR   00D0H.5 A                          55# 
+MX2. . . . . . . .  B ADDR   00D8H.2 A                          120# 
+TR1. . . . . . . .  B ADDR   0088H.6 A                          63# 
+F1 . . . . . . . .  B ADDR   00D0H.1 A                          59# 
+IEX2 . . . . . . .  B ADDR   00C0H.1 A                          130# 
+ES . . . . . . . .  B ADDR   00A8H.4 A                          74# 
+IEX3 . . . . . . .  B ADDR   00C0H.2 A                          129# 
+CCEN . . . . . . .  D ADDR   00C1H   A                          35# 
+LOOP . . . . . . .  C ADDR   1002H   A                          138# 145 
+IEX4 . . . . . . .  B ADDR   00C0H.3 A                          128# 
+CLK. . . . . . . .  B ADDR   00D8H.6 A                          117# 
+PSW. . . . . . . .  D ADDR   00D0H   A                          14# 
+IEX5 . . . . . . .  B ADDR   00C0H.4 A                          127# 
+RI . . . . . . . .  B ADDR   0098H.0 A                          105# 
+INT0 . . . . . . .  B ADDR   00B0H.2 A                          94# 
+IRCON. . . . . . .  D ADDR   00C0H   A                          34# 
+READ . . . . . . .  C ADDR   101FH   A                          143 154# 159 
+IEX6 . . . . . . .  B ADDR   00C0H.5 A                          126# 
+INT1 . . . . . . .  B ADDR   00B0H.3 A                          93# 
+CY . . . . . . . .  B ADDR   00D0H.7 A                          53# 
+DPH. . . . . . . .  D ADDR   0083H   A                          19# 151 158 163 
+TI . . . . . . . .  B ADDR   0098H.1 A                          104# 
+IE0. . . . . . . .  B ADDR   0088H.1 A                          68# 
+ADDAT. . . . . . .  D ADDR   00D9H   A                          48# 
+T2I0 . . . . . . .  B ADDR   00C8H.0 A                          114# 
+IE1. . . . . . . .  B ADDR   0088H.3 A                          66# 
+CCH1 . . . . . . .  D ADDR   00C3H   A                          37# 
+
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     55    ----
+   XDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+REGISTER BANK(S) USED : 0 
+
+ASSEMBLY COMPLETE.   1 WARNING(S)   0 ERROR(S)

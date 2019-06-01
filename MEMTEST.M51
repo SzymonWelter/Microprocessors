@@ -1,0 +1,202 @@
+LX51 CODE BANKING LINKER/LOCATOR V05.01.16       06/01/19  16:33:38  PAGE  1
+WIN32 LX51 CODE BANKING LINKER/LOCATOR V05.01.16,  INVOKED BY:
+LX51 e:\user\documents\mikroprocki\microprocessors\memtest.OBJ TO(e:\user\doc&
+uments\mikroprocki\microprocessors\memtest.AOF) PR(e:\user\documents\mikropro&
+cki\microprocessors\memtest.m51) PW(80) XSIZE(65536) CSIZE(65536) RS(256) RSI&
+(256) IX MAP 
+
+
+MEMORY MODEL: LARGE
+
+
+INPUT MODULES INCLUDED
+  E:\USER\DOCUMENTS\MIKROPROCKI\MICROPROCESSORS\MEMTEST.OBJ(MEMTEST)
+
+
+LINK MAP OF MODULE: E:\USER\DOCUMENTS\MIKROPROCKI\MICROPROCESSORS\MEMTEST.AOF (&
+MEMTEST)
+
+    TYPE     BASE       LENGTH    RELOCATION     SEGMENT NAME
+    ----     ----       ------    ----------     ------------
+
+    * * * * * * *   DATA/IDATA    M E M O R Y   * * * * * * *
+    REG      0000H      0008H     ABSOLUTE       "REG BANK 0"
+
+    * * * * * * *   CODE          M E M O R Y   * * * * * * *
+    CODE     0000H      0003H     ABSOLUTE       
+             0003H      0FFDH                    *** GAP ***
+    CODE     1000H      0034H     ABSOLUTE       
+
+EXECUTABLE SUMMARY:
+-------------------
+    Total INTERNAL RAM storage requirement:  0008H (8)
+    Total EXTERNAL RAM storage requirement:  0000H (0)
+    Total     CODE     storage requirement:  0037H (55)
+Note:  Summary does not include dynamic stack requirements
+
+
+REFERENCE MAP OF MODULE: E:\USER\DOCUMENTS\MIKROPROCKI\MICROPROCESSORS\MEMTEST.AOF (MEMTEST)
+
+SEGMENT                           BI_GROUP            DT_GROUP             ID_GROUP             XD_GROUP
+  +--> CALLED SEGMENT          START    LENGTH     START    LENGTH     START    LENGTH     START    LENGTH
+--------------------------------------------------------------------------------------
+
+SYMBOL TABLE FOR E:\USER\DOCUMENTS\MIKROPROCKI\MICROPROCESSORS\MEMTEST.AOF(MEMT&
+EST)
+-------------------------------------------------------------------------------&
+-----
+
+    VALUE              TYPE               NAME
+    -----              ----               ----
+
+	-------            MODULE             MEMTEST
+	B:00C9H            SYMBOL             T2I1
+	D:00CBH            SYMBOL             CRCH
+	D:00C5H            SYMBOL             CCH2
+	D:0082H            SYMBOL             DPL
+	D:0080H            SYMBOL             P0
+	D:00C7H            SYMBOL             CCH3
+	D:0090H            SYMBOL             P1
+	B:00BEH            SYMBOL             SWDT
+	B:00BFH            SYMBOL             EXEN2
+	D:00F0H            SYMBOL             B
+	D:00A0H            SYMBOL             P2
+	D:00C2H            SYMBOL             CCL1
+	D:0081H            SYMBOL             SP
+	D:00B0H            SYMBOL             P3
+	B:00B4H            SYMBOL             T0
+	B:00D6H            SYMBOL             AC
+	D:00CAH            SYMBOL             CRCL
+	D:00C4H            SYMBOL             CCL2
+LX51 CODE BANKING LINKER/LOCATOR V05.01.16         06/01/19  16:33:38  PAGE  2
+
+	D:00E8H            SYMBOL             P4
+	C:1014H            SYMBOL             MAIN
+	B:009CH            SYMBOL             REN
+	B:00B5H            SYMBOL             T1
+	B:00D2H            SYMBOL             OV
+	D:00D8H            SYMBOL             ADCON
+	D:00C6H            SYMBOL             CCL3
+	D:00F8H            SYMBOL             P5
+	B:00DFH            SYMBOL             BD
+	D:00C8H            SYMBOL             T2CON
+	D:00DAH            SYMBOL             DAPR
+	D:00E0H            SYMBOL             ACC
+	B:00CBH            SYMBOL             T2R0
+	C:102CH            SYMBOL             ERR
+	B:00CCH            SYMBOL             T2R1
+	B:00CFH            SYMBOL             T2PS
+	B:00B6H            SYMBOL             WR
+	B:00A9H            SYMBOL             ET0
+	D:00A9H            SYMBOL             IP0
+	B:00ABH            SYMBOL             ET1
+	B:008DH            SYMBOL             TF0
+	D:00B9H            SYMBOL             IP1
+	C:1017H            SYMBOL             WRITE
+	B:00ADH            SYMBOL             ET2
+	B:008FH            SYMBOL             TF1
+	B:00C6H            SYMBOL             TF2
+	B:009AH            SYMBOL             RB8
+	D:00A8H            SYMBOL             IEN0
+	D:008CH            SYMBOL             TH0
+	B:00B8H            SYMBOL             EADC
+	B:00A8H            SYMBOL             EX0
+	B:0088H            SYMBOL             IT0
+	D:00B8H            SYMBOL             IEN1
+	D:008DH            SYMBOL             TH1
+	B:00DCH            SYMBOL             BSY
+	B:009BH            SYMBOL             TB8
+	B:00B0H            SYMBOL             RXD
+	B:00AAH            SYMBOL             EX1
+	B:008AH            SYMBOL             IT1
+	D:00CDH            SYMBOL             TH2
+	B:00B9H            SYMBOL             EX2
+	B:00AEH            SYMBOL             WDT
+	B:009FH            SYMBOL             SM0
+	B:00B1H            SYMBOL             TXD
+	B:00BAH            SYMBOL             EX3
+	B:00D0H            SYMBOL             P
+	D:0099H            SYMBOL             SBUF
+	D:008AH            SYMBOL             TL0
+	D:0087H            SYMBOL             PCON
+	B:00C0H            SYMBOL             IADC
+	B:009EH            SYMBOL             SM1
+	B:00BBH            SYMBOL             EX4
+	D:008BH            SYMBOL             TL1
+	B:00DBH            SYMBOL             ADM
+	B:009DH            SYMBOL             SM2
+	B:00BCH            SYMBOL             EX5
+	B:00AFH            SYMBOL             EAL
+	D:00CCH            SYMBOL             TL2
+	B:00CDH            SYMBOL             I2FR
+	B:00BDH            SYMBOL             EX6
+	D:0098H            SYMBOL             SCON
+	B:00CEH            SYMBOL             I3FR
+	D:0089H            SYMBOL             TMOD
+	D:0088H            SYMBOL             TCON
+	B:00C7H            SYMBOL             EXF2
+	B:00D8H            SYMBOL             MX0
+	B:00D3H            SYMBOL             RS0
+	B:00D9H            SYMBOL             MX1
+LX51 CODE BANKING LINKER/LOCATOR V05.01.16         06/01/19  16:33:38  PAGE  3
+
+	B:00CAH            SYMBOL             T2CM
+	B:00B7H            SYMBOL             RD
+	B:008CH            SYMBOL             TR0
+	B:00D4H            SYMBOL             RS1
+	B:00D5H            SYMBOL             F0
+	B:00DAH            SYMBOL             MX2
+	B:008EH            SYMBOL             TR1
+	B:00D1H            SYMBOL             F1
+	B:00C1H            SYMBOL             IEX2
+	B:00ACH            SYMBOL             ES
+	B:00C2H            SYMBOL             IEX3
+	D:00C1H            SYMBOL             CCEN
+	C:1002H            SYMBOL             LOOP
+	B:00C3H            SYMBOL             IEX4
+	B:00DEH            SYMBOL             CLK
+	D:00D0H            SYMBOL             PSW
+	B:00C4H            SYMBOL             IEX5
+	B:0098H            SYMBOL             RI
+	B:00B2H            SYMBOL             INT0
+	D:00C0H            SYMBOL             IRCON
+	C:101FH            SYMBOL             READ
+	B:00C5H            SYMBOL             IEX6
+	B:00B3H            SYMBOL             INT1
+	B:00D7H            SYMBOL             CY
+	D:0083H            SYMBOL             DPH
+	B:0099H            SYMBOL             TI
+	B:0089H            SYMBOL             IE0
+	D:00D9H            SYMBOL             ADDAT
+	B:00C8H            SYMBOL             T2I0
+	B:008BH            SYMBOL             IE1
+	D:00C3H            SYMBOL             CCH1
+	C:0000H            LINE#              4
+	C:1000H            LINE#              7
+	C:1002H            LINE#              9
+	C:1005H            LINE#              10
+	C:1008H            LINE#              11
+	C:100BH            LINE#              12
+	C:100DH            LINE#              13
+	C:1010H            LINE#              14
+	C:1011H            LINE#              15
+	C:1014H            LINE#              17
+	C:1017H            LINE#              19
+	C:1018H            LINE#              20
+	C:1019H            LINE#              21
+	C:101BH            LINE#              22
+	C:101EH            LINE#              23
+	C:101FH            LINE#              25
+	C:1020H            LINE#              26
+	C:1023H            LINE#              27
+	C:1024H            LINE#              28
+	C:1026H            LINE#              29
+	C:1029H            LINE#              30
+	C:102BH            LINE#              31
+	C:102CH            LINE#              33
+	C:102FH            LINE#              34
+	C:1031H            LINE#              35
+	-------            ENDMOD             MEMTEST
+
+LINK/LOCATE RUN COMPLETE,  NO ERROR FOUND.
+
